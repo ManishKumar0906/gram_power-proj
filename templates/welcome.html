@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- Message aleart -->
+    {% for message in messages %}
+    <p class="text-center text-success" style="font-family: Poppins-Medium;">{{message}}</p>
+    {% endfor %}
+
+
+    <!-- Device Data -->
+    <div class="container px-4 py-5" id="featured-3">
+        <div class="row g-4 py-5 row-cols-lg-4 justify-content-center">
+            {% for device in data %}
+            <div class="feature col border p-3 m-3">
+                <a href=/deviceData/{{device.id}} class="icon-link align-items-center text-dark position-relative text-decoration-none">
+                    <h6>{{device.device_name}}</h6>
+                    <p>{{device.device_id}}</p>
+                    <span class="px-3 py-1 text-light status" id={{device.device_status}}>{{device.device_status}}</span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Device Data End -->
+
+    {% endblock content %}

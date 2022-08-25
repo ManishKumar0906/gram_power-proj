@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <!-- Message aleart -->
+        {% for message in messages %}
+        <p class="text-center text-success mt-3" style="font-family: Poppins-Medium;">{{message}}</p>
+        {% endfor %}
+
+    <!-- Add Device -->
+    <div class="container px-4 p-5 d-flex m-auto justify-content-center mt-5">
+        <div class="card border-success mb-3 p-1" style="max-width: 18rem;">
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="card-header bg-transparent border-success">
+                    Add Device
+                </div>
+                <!-- Device Name -->
+                <div class="mb-2 mt-3">
+                    <label for="deviceName" class="form-label">Device Name:</label>
+                    <input class="form-control form-control-sm" name="deviceName" type="text" placeholder="Device Name">
+                  </div>
+                  <!-- Device Id -->
+                  <div class="mb-2">
+                    <label for="deviceId" class="form-label">Device ID:</label>
+                    <input class="form-control form-control-sm" name="deviceId" type="text" placeholder="Device Id">
+                  </div>
+                    <!-- Device Status -->
+                    <div class="mb-2">
+                        <label for="deviceId" class="form-label">Device Status:</label>
+                        <select class="form-select form-control-sm" name="deviceStatus" aria-label="Default select example">
+                            <option value="Live" selected>Live</option>
+                            <option value="Down">Down</option>
+                          </select>
+                        </div>
+                <div type="submit" name="device" class="card-footer bg-transparent border-success">
+                    <button type="submit" name="device" class="btn btn-success m-auto d-flex">Add Device</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Device Data End -->
+
+
+    {% endblock content %}
