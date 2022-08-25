@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'validation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'logindata',
+        'NAME': 'loginpagedata',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
